@@ -10,7 +10,7 @@ Let's write a Sudoku solver in JavaScript!
   - [1. Nouns And Verbs](#1-nouns-and-verbs)
   - [2. Strategies For Humans](#2-strategies-for-humans)
 - [Iterations](#iterations)
-  - [[v1] Pseudocode - No Guessing](#v1-pseudocode---no-guessing)
+  - [[v1] Pseudocode - Single-Guess Cells](#v1-pseudocode---single-guess-cells)
   - [[v2] Creating And Displaying The Board](#v2-creating-and-displaying-the-board)
   - [[v3] Filling In Single-Guess Cells](#v3-filling-in-single-guess-cells)
   - [[v4] Solving Every Sudoku Board](#v4-solving-every-sudoku-board)
@@ -97,11 +97,11 @@ Now that you've built some familiarity with playing Sudoku, let's try to encapsu
 
 We'll start by only filling in the cells where there's only one possible "guess" (like the example from the [Sudoku](#sudoku) section above). Later, we'll deal with the case where we can't rule out all-but-one potential number.
 
-### [v1] Pseudocode - No Guessing
+### [v1] Pseudocode - Single-Guess Cells
 
 This program is complex enough that we think you should write pseudocode before you start writing JavaScript.
 
-Remember, for the first iteration, we're just going build a solver that fills in "logically necessary" squares and requires no guessing. This might not solve every Sudoku board, although it often solves the easiest. How can you tell when you've filled in all the "logically necessary" squares?
+Remember, for the first iteration, we're just going build a solver that fills in "logically necessary" squares, i.e., the cells that only have one possible guess. This might not solve every Sudoku board, although it often solves the easiest. How can you tell when you've filled in all the "logically necessary" squares?
 
 If you're doing this in a group, write out your pseudocode separately and compare it to each other. How does it differ? Which approach seems more sound? Are there some core operations or functions you need to support?
 
@@ -114,7 +114,6 @@ For example, given a cell, you'll probably need at least three functions:
 ### [v2] Creating And Displaying The Board
 
 Let's first get the board alone working.
-
 
 We've written some scaffolded code for you. The `SudokuBoard` constructor should take in a string like this as input:
 
